@@ -1,0 +1,223 @@
+@model HomeController.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-subtitle">Welcome to Hotel Management System</p>
+</div>
+
+<!-- Stats Cards Row -->
+<div class="row mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                <i class="bi bi-calendar-check"></i>
+            </div>
+            <div class="stats-number">@Model.TotalBookings</div>
+            <div class="stats-label">Total Bookings</div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon" style="background: linear-gradient(135deg, #27ae60, #229954);">
+                <i class="bi bi-people"></i>
+            </div>
+            <div class="stats-number">@Model.TotalCustomers</div>
+            <div class="stats-label">Total Customers</div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                <i class="bi bi-door-open"></i>
+            </div>
+            <div class="stats-number">@Model.TotalRooms</div>
+            <div class="stats-label">Total Rooms</div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="stats-card">
+            <div class="stats-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <div class="stats-number">@Model.AvailableRooms</div>
+            <div class="stats-label">Available Rooms</div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row mb-4">
+    <div class="col-xl-8 col-lg-7">
+        <div class="chart-container">
+            <h5 class="mb-4">Monthly Bookings Overview</h5>
+            <canvas id="bookingsChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+    <div class="col-xl-4 col-lg-5">
+        <div class="chart-container">
+            <h5 class="mb-4">Room Occupancy</h5>
+            <canvas id="occupancyChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity Row -->
+<div class="row">
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-calendar-check me-2"></i>
+                Recent Bookings
+            </div>
+            <div class="card-body">
+                @if (Model.RecentBookings.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Customer</th>
+                                    <th>Room</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var booking in Model.RecentBookings)
+                                {
+                                    <tr>
+                                        <td>#@booking.BookingId</td>
+                                        <td>Customer @booking.CustomerId</td>
+                                        <td>Room @booking.RoomId</td>
+                                        <td>
+                                            <span class="badge bg-success">@booking.BookingStatus</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-3">No recent bookings</p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-door-open me-2"></i>
+                Available Rooms
+            </div>
+            <div class="card-body">
+                @if (Model.AvailableRoomList.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Room</th>
+                                    <th>Type</th>
+                                    <th>Capacity</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var room in Model.AvailableRoomList)
+                                {
+                                    <tr>
+                                        <td>@room.RoomNumber</td>
+                                        <td>Type @room.RoomTypeId</td>
+                                        <td>@room.Capacity</td>
+                                        <td>@room.PricePerNight?.ToString("C")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-3">No available rooms</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    // Bookings Chart
+    const bookingsCtx = document.getElementById('bookingsChart').getContext('2d');
+    new Chart(bookingsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Bookings',
+                data: [12, 19, 15, 25, 22, 30, 28, 35, 32, 40, 38, 45],
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(0,0,0,0.1)'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+
+    // Occupancy Chart
+    const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
+    new Chart(occupancyCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Occupied', 'Available'],
+            datasets: [{
+                data: [@(Model.TotalRooms - Model.AvailableRooms), @Model.AvailableRooms],
+                backgroundColor: ['#e74c3c', '#27ae60'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    });
+</script>
+}

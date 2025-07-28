@@ -1,0 +1,113 @@
+@model List<FrontendHotelManagementSystem.Models.Booking>
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<!-- Page Header -->
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="page-title">Bookings</h1>
+        <p class="page-subtitle">Manage hotel reservations</p>
+    </div>
+    <a asp-action="AddEdit" class="btn btn-success">
+        <i class="bi bi-plus-circle me-2"></i>New Booking
+    </a>
+</div>
+
+<!-- Error Alert -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        @TempData["Error"]
+    </div>
+}
+
+<!-- Bookings Table -->
+<div class="table-container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><i class="bi bi-hash me-2"></i>ID</th>
+                    <th><i class="bi bi-person me-2"></i>Customer</th>
+                    <th><i class="bi bi-door-open me-2"></i>Room</th>
+                    <th><i class="bi bi-calendar-check me-2"></i>Check In</th>
+                    <th><i class="bi bi-calendar-x me-2"></i>Check Out</th>
+                    <th><i class="bi bi-people me-2"></i>Guests</th>
+                    <th><i class="bi bi-currency-dollar me-2"></i>Amount</th>
+                    <th><i class="bi bi-info-circle me-2"></i>Status</th>
+                    <th><i class="bi bi-gear me-2"></i>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    @foreach (var booking in Model)
+                    {
+                        <tr>
+                            <td><strong>#@booking.BookingId</strong></td>
+                            <td>Customer @booking.CustomerId</td>
+                            <td>Room @booking.RoomId</td>
+                            <td>@booking.CheckInDate?.ToString("MMM dd, yyyy")</td>
+                            <td>@booking.CheckOutDate?.ToString("MMM dd, yyyy")</td>
+                            <td>
+                                <span class="badge bg-info">
+                                    @booking.NumberOfGuests Adults
+                                    @if (booking.NumberOfChildrens > 0)
+                                    {
+                                        <span>, @booking.NumberOfChildrens Children</span>
+                                    }
+                                </span>
+                            </td>
+                            <td>
+                                <strong>@booking.TotalAmount?.ToString("C")</strong>
+                                @if (booking.DiscountAmount > 0)
+                                {
+                                    <br><small class="text-success">-@booking.DiscountAmount?.ToString("C") discount</small>
+                                }
+                            </td>
+                            <td>
+                                @{
+                                    var statusClass = booking.BookingStatus?.ToLower() switch
+                                    {
+                                        "confirmed" => "bg-success",
+                                        "pending" => "bg-warning",
+                                        "cancelled" => "bg-danger",
+                                        _ => "bg-secondary"
+                                    };
+                                }
+                                <span class="badge @statusClass">@booking.BookingStatus</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a asp-action="AddEdit" asp-route-id="@booking.BookingId" 
+                                       class="btn btn-warning btn-sm" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@booking.BookingId" 
+                                       class="btn btn-danger btn-sm" title="Delete"
+                                       onclick="return confirm('Are you sure you want to delete this booking?');">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9" class="text-center py-5">
+                            <i class="bi bi-calendar-x fs-1 text-muted"></i>
+                            <p class="text-muted mt-3">No bookings found</p>
+                            <a asp-action="AddEdit" class="btn btn-success">
+                                <i class="bi bi-plus-circle me-2"></i>Create First Booking
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

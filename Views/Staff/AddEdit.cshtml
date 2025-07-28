@@ -1,0 +1,101 @@
+@model FrontendHotelManagementSystem.Models.Staff
+@{
+    ViewData["Title"] = Model.StaffId == 0 ? "Add Staff" : "Edit Staff";
+}
+
+<!-- Page Header -->
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="page-title">@ViewData["Title"]</h1>
+        <p class="page-subtitle">@(Model.StaffId == 0 ? "Add a new staff member" : "Update staff information")</p>
+    </div>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="bi bi-arrow-left me-2"></i>Back to List
+    </a>
+</div>
+
+<!-- Error Alert -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        @TempData["Error"]
+    </div>
+}
+
+<!-- Staff Form -->
+<div class="form-container">
+    <form asp-action="AddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+        <input type="hidden" asp-for="StaffId" />
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="FullName" class="form-label">
+                    <i class="bi bi-person me-2"></i>Full Name
+                </label>
+                <input asp-for="FullName" class="form-control" placeholder="Enter full name" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label asp-for="Role" class="form-label">
+                    <i class="bi bi-briefcase me-2"></i>Role
+                </label>
+                <select asp-for="Role" class="form-select">
+                    <option value="">-- Select Role --</option>
+                    <option value="Manager">👔 Manager</option>
+                    <option value="Receptionist">🏨 Receptionist</option>
+                    <option value="Housekeeper">🧹 Housekeeper</option>
+                    <option value="Maintenance">🔧 Maintenance</option>
+                    <option value="Chef">👨‍🍳 Chef</option>
+                    <option value="Waiter">🍽️ Waiter</option>
+                    <option value="Security">🛡️ Security</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="ContactNumber" class="form-label">
+                    <i class="bi bi-telephone me-2"></i>Contact Number
+                </label>
+                <input asp-for="ContactNumber" class="form-control" placeholder="Enter contact number" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label asp-for="Email" class="form-label">
+                    <i class="bi bi-envelope me-2"></i>Email Address
+                </label>
+                <input asp-for="Email" class="form-control" type="email" placeholder="Enter email address" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="mb-4">
+            <label asp-for="JoiningDate" class="form-label">
+                <i class="bi bi-calendar me-2"></i>Joining Date
+            </label>
+            <input asp-for="JoiningDate" class="form-control" type="date" />
+            <span asp-validation-for="JoiningDate" class="text-danger"></span>
+        </div>
+        
+        <div class="d-flex gap-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle me-2"></i>
+                @(Model.StaffId == 0 ? "Add Staff Member" : "Update Staff Member")
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-x-circle me-2"></i>Cancel
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
