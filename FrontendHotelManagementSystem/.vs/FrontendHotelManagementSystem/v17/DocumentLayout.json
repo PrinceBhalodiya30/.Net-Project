@@ -1,0 +1,522 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\dashboardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\dashboardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\payment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\payment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\roomtype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\roomtype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\staff\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\staff\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\booking\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\booking\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\roomtype\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\roomtype\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\room\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\room\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\payment\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\payment\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\views\\customer\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:views\\customer\\addedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|d:\\adv.net\\demo\\frontendhotelmanagementsystem\\frontendhotelmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8F27B0-4369-420F-A6FD-867BD212350D}|FrontendHotelManagementSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T15:44:02.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T15:26:57.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Staff\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Staff\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Staff\\Index.cshtml",
+              "RelativeToolTip": "Views\\Staff\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABwAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:57.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Staff\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Staff\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Staff\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\Staff\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:54.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\RoomType\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\RoomType\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\RoomType\\Index.cshtml",
+              "RelativeToolTip": "Views\\RoomType\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:51.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\RoomType\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\RoomType\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\RoomType\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\RoomType\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:47.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Room\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Room\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Room\\Index.cshtml",
+              "RelativeToolTip": "Views\\Room\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:44.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Room\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Room\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Room\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\Room\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:41.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Payment\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Payment\\Index.cshtml",
+              "RelativeToolTip": "Views\\Payment\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:37.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Payment\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Payment\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\Payment\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:34.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:31.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Customer\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Customer\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\Customer\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-27T04:46:28.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T04:42:40.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "Controllers\\StaffController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T04:42:26.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RoomTypeController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\RoomTypeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomTypeController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\RoomTypeController.cs",
+              "RelativeToolTip": "Controllers\\RoomTypeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T04:42:12.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T04:41:52.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T04:40:52.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AddEdit.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Booking\\AddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\AddEdit.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Booking\\AddEdit.cshtml",
+              "RelativeToolTip": "Views\\Booking\\AddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T13:02:27.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACwAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T13:02:09.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T13:00:57.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardModel.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\DashboardModel.cs",
+              "RelativeDocumentMoniker": "Models\\DashboardModel.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\DashboardModel.cs",
+              "RelativeToolTip": "Models\\DashboardModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T03:00:04.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T02:55:06.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-11T02:55:45.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\RoomType.cs",
+              "RelativeDocumentMoniker": "Models\\RoomType.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\RoomType.cs",
+              "RelativeToolTip": "Models\\RoomType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T02:56:26.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T02:55:55.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T02:55:34.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Staff.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Staff.cs",
+              "RelativeDocumentMoniker": "Models\\Staff.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Staff.cs",
+              "RelativeToolTip": "Models\\Staff.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T18:33:54.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T02:50:29.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T06:11:43.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAADwvxwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-11T02:59:13.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Adv.Net\\Demo\\FrontendHotelManagementSystem\\FrontendHotelManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T07:34:59.1Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

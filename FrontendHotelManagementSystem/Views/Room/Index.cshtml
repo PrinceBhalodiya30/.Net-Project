@@ -1,0 +1,46 @@
+@model List<FrontendHotelManagementSystem.Models.Room>
+@{
+    ViewData["Title"] = "Room List";
+}
+<div class="container-fluid mt-4">
+    <h2>Room List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Room</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Room Number</th>
+                <th>Room Type ID</th>
+                <th>Capacity</th>
+                <th>Price Per Night</th>
+                <th>Available</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var room in Model)
+            {
+                <tr>
+                    <td>@room.RoomNumber</td>
+                    <td>@room.RoomTypeId</td>
+                    <td>@room.Capacity</td>
+                    <td>@room.PricePerNight?.ToString("C")</td>
+                    <td>
+                        @if (room.IsAvaliable)
+                        {
+                            <span class="badge bg-success">Available</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Occupied</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="AddEdit" asp-route-id="@room.RoomId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@room.RoomId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this room?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 

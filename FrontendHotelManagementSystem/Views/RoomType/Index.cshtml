@@ -1,0 +1,29 @@
+@model List<FrontendHotelManagementSystem.Models.RoomType>
+@{
+    ViewData["Title"] = "Room Type List";
+}
+<div class="container-fluid mt-4">
+    <h2>Room Type List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Room Type</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Room Type Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var roomType in Model)
+            {
+                <tr>
+                    <td>@roomType.RoomTypeName</td>
+                    <td>
+                        <a asp-action="AddEdit" asp-route-id="@roomType.RoomTypeId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@roomType.RoomTypeId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this room type?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 

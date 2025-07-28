@@ -1,0 +1,35 @@
+@model List<FrontendHotelManagementSystem.Models.Payment>
+@{
+    ViewData["Title"] = "Payment List";
+}
+<div class="container-fluid mt-4">
+    <h2>Payment List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Payment</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Payment Date</th>
+                <th>Amount Paid</th>
+                <th>Payment Mode</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var payment in Model)
+            {
+                <tr>
+                    <td>@payment.BookingId</td>
+                    <td>@payment.PaymentDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@payment.AmountPaid?.ToString("C")</td>
+                    <td>@payment.PaymentMode</td>
+                    <td>
+                        <a asp-action="AddEdit" asp-route-id="@payment.PaymentId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@payment.PaymentId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this payment?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 

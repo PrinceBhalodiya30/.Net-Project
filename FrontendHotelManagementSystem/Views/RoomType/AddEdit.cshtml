@@ -1,0 +1,24 @@
+@model FrontendHotelManagementSystem.Models.RoomType
+@{
+    ViewData["Title"] = Model.RoomTypeId == 0 ? "Add Room Type" : "Edit Room Type";
+}
+<div class="container-fluid mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <form asp-action="AddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="RoomTypeId" />
+        <div class="mb-3">
+            <label asp-for="RoomTypeName" class="form-label"></label>
+            <input asp-for="RoomTypeName" class="form-control" />
+            <span asp-validation-for="RoomTypeName" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">@((Model.RoomTypeId == 0) ? "Add" : "Update")</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+} 

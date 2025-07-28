@@ -1,0 +1,37 @@
+@model List<FrontendHotelManagementSystem.Models.Customer>
+@{
+    ViewData["Title"] = "Customer List";
+}
+<div class="container-fluid mt-4">
+    <h2>Customer List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Customer</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.FullName</td>
+                    <td>@customer.Gender</td>
+                    <td>@customer.PhoneNumber</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Address</td>
+                    <td>
+                        <a asp-action="AddEdit" asp-route-id="@customer.CustomerId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@customer.CustomerId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this customer?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 

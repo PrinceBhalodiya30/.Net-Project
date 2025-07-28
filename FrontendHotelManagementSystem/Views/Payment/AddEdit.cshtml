@@ -1,0 +1,49 @@
+@model FrontendHotelManagementSystem.Models.Payment
+@{
+    ViewData["Title"] = Model.PaymentId == 0 ? "Add Payment" : "Edit Payment";
+}
+<div class="container-fluid mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <form asp-action="AddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="PaymentId" />
+        <div class="mb-3">
+            <label asp-for="BookingId" class="form-label"></label>
+            <select asp-for="BookingId" asp-items="ViewBag.Bookings" class="form-control">
+                <option value="">-- Select Booking --</option>
+            </select>
+            <span asp-validation-for="BookingId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PaymentDate" class="form-label"></label>
+            <input asp-for="PaymentDate" class="form-control" type="date" />
+            <span asp-validation-for="PaymentDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AmountPaid" class="form-label"></label>
+            <input asp-for="AmountPaid" class="form-control" type="number" step="0.01" min="0.01" />
+            <span asp-validation-for="AmountPaid" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PaymentMode" class="form-label"></label>
+            <select asp-for="PaymentMode" class="form-control">
+                <option value="">-- Select Payment Mode --</option>
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="UPI">UPI</option>
+                <option value="Digital Wallet">Digital Wallet</option>
+            </select>
+            <span asp-validation-for="PaymentMode" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">@((Model.PaymentId == 0) ? "Add" : "Update")</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+} 

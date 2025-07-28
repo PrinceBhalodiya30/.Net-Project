@@ -1,0 +1,53 @@
+﻿@model List<FrontendHotelManagementSystem.Models.Booking>
+@{
+    ViewData["Title"] = "Booking List";
+}
+<div class="container-fluid mt-4">
+    <h2>Booking List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Booking</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CustomerId</th>
+                    <th>RoomId</th>
+                    <th>ID Proof Type</th>
+                    <th>ID Proof No</th>
+                    <th>ID Proof URL</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Guests</th>
+                    <th>Children</th>
+                    <th>Total Amount</th>
+                    <th>Discount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.CustomerId</td>
+                        <td>@booking.RoomId</td>
+                        <td>@booking.IdproofType</td>
+                        <td>@booking.IdproofTypeNo</td>
+                        <td>@booking.IdproofUrl</td>
+                        <td>@booking.CheckInDate?.ToString("yyyy-MM-dd")</td>
+                        <td>@booking.CheckOutDate?.ToString("yyyy-MM-dd")</td>
+                        <td>@booking.NumberOfGuests</td>
+                        <td>@booking.NumberOfChildrens</td>
+                        <td>@booking.TotalAmount</td>
+                        <td>@booking.DiscountAmount</td>
+                        <td>@booking.BookingStatus</td>
+                        <td>
+                            <a asp-action="AddEdit" asp-route-id="@booking.BookingId" class="btn btn-warning btn-sm mb-2">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this booking?');">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

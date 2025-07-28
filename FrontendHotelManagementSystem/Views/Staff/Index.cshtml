@@ -1,0 +1,36 @@
+@model List<FrontendHotelManagementSystem.Models.Staff>
+@{
+    ViewData["Title"] = "Staff List";
+}
+<div class="container-fluid mt-4">    <h2>Staff List</h2>
+    <a asp-action="AddEdit" class="btn btn-success mb-3">Add New Staff</a>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Joining Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var staff in Model)
+            {
+                <tr>
+                    <td>@staff.FullName</td>
+                    <td>@staff.Role</td>
+                    <td>@staff.ContactNumber</td>
+                    <td>@staff.Email</td>
+                    <td>@staff.JoiningDate?.ToString("MM/dd/yyyy")</td>
+                    <td>
+                        <a asp-action="AddEdit" asp-route-id="@staff.StaffId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@staff.StaffId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this staff?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

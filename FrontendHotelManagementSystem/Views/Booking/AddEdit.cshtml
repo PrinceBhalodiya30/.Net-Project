@@ -1,0 +1,83 @@
+﻿@model FrontendHotelManagementSystem.Models.Booking
+@{
+    ViewData["Title"] = Model.BookingId == 0 ? "Add Booking" : "Edit Booking";
+}
+<div class="container-fluid mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <form asp-action="AddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="BookingId" />
+        <div class="mb-3">
+            <label asp-for="CustomerId" class="form-label"></label>
+            <select asp-for="CustomerId" asp-items="ViewBag.Customers" class="form-control">
+                <option value="">-- Select Customer --</option>
+            </select>
+            <span asp-validation-for="CustomerId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RoomId" class="form-label"></label>
+            <select asp-for="RoomId" asp-items="ViewBag.Rooms" class="form-control">
+                <option value="">-- Select Room --</option>
+            </select>
+            <span asp-validation-for="RoomId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IdproofType" class="form-label"></label>
+            <input asp-for="IdproofType" class="form-control" />
+            <span asp-validation-for="IdproofType" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IdproofTypeNo" class="form-label"></label>
+            <input asp-for="IdproofTypeNo" class="form-control" />
+            <span asp-validation-for="IdproofTypeNo" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IdproofUrl" class="form-label"></label>
+            <input asp-for="IdproofUrl" class="form-control" />
+            <span asp-validation-for="IdproofUrl" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CheckInDate" class="form-label"></label>
+            <input asp-for="CheckInDate" type="date" class="form-control" />
+            <span asp-validation-for="CheckInDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CheckOutDate" class="form-label"></label>
+            <input asp-for="CheckOutDate" type="date" class="form-control" />
+            <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NumberOfGuests" class="form-label"></label>
+            <input asp-for="NumberOfGuests" class="form-control" type="number" />
+            <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NumberOfChildrens" class="form-label"></label>
+            <input asp-for="NumberOfChildrens" class="form-control" type="number" />
+            <span asp-validation-for="NumberOfChildrens" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TotalAmount" class="form-label"></label>
+            <input asp-for="TotalAmount" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DiscountAmount" class="form-label"></label>
+            <input asp-for="DiscountAmount" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="DiscountAmount" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BookingStatus" class="form-label"></label>
+            <input asp-for="BookingStatus" class="form-control" />
+            <span asp-validation-for="BookingStatus" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">@((Model.BookingId == 0) ? "Add" : "Update")</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

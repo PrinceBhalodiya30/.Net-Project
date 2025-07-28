@@ -1,0 +1,53 @@
+@model FrontendHotelManagementSystem.Models.Staff
+@{
+    ViewData["Title"] = Model.StaffId == 0 ? "Add Staff" : "Edit Staff";
+}
+<div class="container-fluid mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <h3 class="text-danger">@TempData["Error"]</h3>
+    <form asp-action="AddEdit" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" asp-for="StaffId" />
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label"></label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Role" class="form-label"></label>
+            <select asp-for="Role" class="form-control">
+                <option value="">-- Select Role --</option>
+                <option value="Manager">Manager</option>
+                <option value="Receptionist">Receptionist</option>
+                <option value="Housekeeper">Housekeeper</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Chef">Chef</option>
+                <option value="Waiter">Waiter</option>
+                <option value="Security">Security</option>
+            </select>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ContactNumber" class="form-label"></label>
+            <input asp-for="ContactNumber" class="form-control" />
+            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" type="email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="JoiningDate" class="form-label"></label>
+            <input asp-for="JoiningDate" class="form-control" type="date" />
+            <span asp-validation-for="JoiningDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">@((Model.StaffId == 0) ? "Add" : "Update")</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+} 
