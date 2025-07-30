@@ -1,0 +1,49 @@
+@model ClientHotelSystem.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Oops! Something went wrong</h1>
+    </div>
+</div>
+
+<!-- Error Content -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 4rem; color: var(--accent-color);"></i>
+                        
+                        <h2 class="font-serif mt-4 mb-3">Something Went Wrong</h2>
+                        <p class="text-muted mb-4">We're sorry, but an error occurred while processing your request. Please try again or contact our support team if the problem persists.</p>
+                        
+                        @if (Model.ShowRequestId)
+                        {
+                            <div class="alert alert-info" role="alert">
+                                <strong>Request ID:</strong> <code>@Model.RequestId</code>
+                                <br><small>Please provide this ID when contacting support</small>
+                            </div>
+                        }
+                        
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+                                <i class="bi bi-house me-2"></i>Go Home
+                            </a>
+                            <button onclick="history.back()" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-2"></i>Go Back
+                            </button>
+                            <a href="@Url.Action("Contact", "Home")" class="btn btn-outline-primary">
+                                <i class="bi bi-headset me-2"></i>Contact Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

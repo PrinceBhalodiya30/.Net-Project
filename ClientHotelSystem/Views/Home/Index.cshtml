@@ -1,0 +1,236 @@
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="mb-4">Welcome to Luxury Hotel</h1>
+            <p class="lead mb-4">Experience unparalleled comfort and elegance in the heart of the city</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="@Url.Action("Index", "Rooms")" class="btn btn-primary btn-lg">
+                    <i class="bi bi-door-open me-2"></i>Explore Rooms
+                </a>
+                <a href="@Url.Action("Create", "Booking")" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-calendar-check me-2"></i>Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">@ViewBag.TotalRooms</span>
+                    <div class="stat-label">Luxury Rooms</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">@ViewBag.AvailableRooms</span>
+                    <div class="stat-label">Available Now</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <div class="stat-label">Customer Service</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">5★</span>
+                    <div class="stat-label">Rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Rooms Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Featured Rooms</h2>
+        <p class="section-subtitle">Discover our most popular accommodations designed for your ultimate comfort</p>
+        
+        <div class="row">
+            @if (ViewBag.FeaturedRooms != null)
+            {
+                @foreach (var room in (List<ClientHotelSystem.Models.Room>)ViewBag.FeaturedRooms)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card room-card">
+                            <div class="position-relative">
+                                <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                                     class="card-img-top" alt="@room.RoomTypeName">
+                                <div class="room-price">@room.PricePerNight?.ToString("C")/night</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title font-serif">@room.RoomTypeName</h5>
+                                <p class="text-muted mb-3">Room @room.RoomNumber</p>
+                                
+                                <div class="room-features">
+                                    <div class="feature-item">
+                                        <i class="bi bi-people"></i>
+                                        <span>@room.Capacity Guests</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="bi bi-wifi"></i>
+                                        <span>Free WiFi</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="bi bi-tv"></i>
+                                        <span>Smart TV</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex gap-2 mt-3">
+                                    <a href="@Url.Action("Details", "Rooms", new { id = room.RoomId })" 
+                                       class="btn btn-outline-primary flex-fill">
+                                        <i class="bi bi-eye me-1"></i>View Details
+                                    </a>
+                                    <a href="@Url.Action("Create", "Booking", new { roomId = room.RoomId })" 
+                                       class="btn btn-primary flex-fill">
+                                        <i class="bi bi-calendar-check me-1"></i>Book Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="@Url.Action("Index", "Rooms")" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-grid me-2"></i>View All Rooms
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="background: var(--light-bg);">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Exceptional amenities and services to make your stay unforgettable</p>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-cup-hot" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">Fine Dining</h5>
+                        <p class="card-text">Experience culinary excellence with our world-class restaurant featuring international cuisine.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-water" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">Spa & Wellness</h5>
+                        <p class="card-text">Rejuvenate your body and mind with our premium spa treatments and wellness facilities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-car-front" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">Airport Transfer</h5>
+                        <p class="card-text">Complimentary airport pickup and drop-off service for a seamless travel experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-calendar-event" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">Event Hosting</h5>
+                        <p class="card-text">Perfect venues for weddings, conferences, and special events with professional planning.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-shield-check" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">24/7 Security</h5>
+                        <p class="card-text">Round-the-clock security and concierge services for your peace of mind and comfort.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="bi bi-wifi" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h5 class="card-title font-serif">High-Speed WiFi</h5>
+                        <p class="card-text">Complimentary high-speed internet access throughout the hotel for business and leisure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
+    <div class="container text-center">
+        <h2 class="font-serif mb-4" style="font-size: 3rem;">Ready for an Unforgettable Stay?</h2>
+        <p class="lead mb-4">Book your perfect room today and experience luxury like never before</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="@Url.Action("Index", "Rooms")" class="btn btn-primary btn-lg">
+                <i class="bi bi-search me-2"></i>Find Your Room
+            </a>
+            <a href="@Url.Action("Contact", "Home")" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-telephone me-2"></i>Call Us Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Success/Error Messages -->
+@if (TempData["Success"] != null)
+{
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+}

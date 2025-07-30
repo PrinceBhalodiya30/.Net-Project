@@ -1,0 +1,318 @@
+@model ClientHotelSystem.Models.Booking
+@{
+    ViewData["Title"] = "Make a Reservation";
+}
+
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Make a Reservation</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="breadcrumb-item active">Book Room</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Booking Form -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h3 class="font-serif mb-4">Reservation Details</h3>
+                        
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                @TempData["Error"]
+                            </div>
+                        }
+                        
+                        <form asp-action="Create" method="post">
+                            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                            <input type="hidden" asp-for="BookingId" />
+                            
+                            <!-- Guest Information -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Guest Information</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" name="GuestName" required placeholder="Enter your full name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" name="GuestEmail" required placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" name="GuestPhone" required placeholder="Enter your phone number">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Gender *</label>
+                                        <select class="form-select" name="GuestGender" required>
+                                            <option value="">Select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Address *</label>
+                                    <textarea class="form-control" name="GuestAddress" rows="2" required placeholder="Enter your full address"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Room Selection -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Room Selection</h5>
+                                
+                                <div class="mb-3">
+                                    <label asp-for="RoomId" class="form-label">Select Room *</label>
+                                    <select asp-for="RoomId" asp-items="ViewBag.Rooms" class="form-select" required>
+                                        <option value="">-- Select a Room --</option>
+                                    </select>
+                                    <span asp-validation-for="RoomId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Stay Details -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Stay Details</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="CheckInDate" class="form-label">Check-in Date *</label>
+                                        <input asp-for="CheckInDate" type="date" class="form-control" required min="@DateTime.Today.ToString("yyyy-MM-dd")">
+                                        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="CheckOutDate" class="form-label">Check-out Date *</label>
+                                        <input asp-for="CheckOutDate" type="date" class="form-control" required min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                                        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="NumberOfGuests" class="form-label">Number of Adults *</label>
+                                        <select asp-for="NumberOfGuests" class="form-select" required>
+                                            <option value="">Select</option>
+                                            <option value="1">1 Adult</option>
+                                            <option value="2">2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                        </select>
+                                        <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="NumberOfChildrens" class="form-label">Number of Children</label>
+                                        <select asp-for="NumberOfChildrens" class="form-select">
+                                            <option value="0">0 Children</option>
+                                            <option value="1">1 Child</option>
+                                            <option value="2">2 Children</option>
+                                            <option value="3">3 Children</option>
+                                        </select>
+                                        <span asp-validation-for="NumberOfChildrens" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- ID Proof -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Identification</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="IdproofType" class="form-label">ID Proof Type *</label>
+                                        <select asp-for="IdproofType" class="form-select" required>
+                                            <option value="">Select ID Type</option>
+                                            <option value="Passport">Passport</option>
+                                            <option value="Driver License">Driver License</option>
+                                            <option value="National ID">National ID</option>
+                                            <option value="Voter ID">Voter ID</option>
+                                        </select>
+                                        <span asp-validation-for="IdproofType" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="IdproofTypeNo" class="form-label">ID Proof Number *</label>
+                                        <input asp-for="IdproofTypeNo" class="form-control" required placeholder="Enter ID number">
+                                        <span asp-validation-for="IdproofTypeNo" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label asp-for="IdproofUrl" class="form-label">ID Document URL (Optional)</label>
+                                    <input asp-for="IdproofUrl" class="form-control" placeholder="Upload document URL if available">
+                                    <span asp-validation-for="IdproofUrl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Pricing -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Pricing</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="TotalAmount" class="form-label">Total Amount *</label>
+                                        <input asp-for="TotalAmount" class="form-control" type="number" step="0.01" min="0" required placeholder="0.00">
+                                        <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label asp-for="DiscountAmount" class="form-label">Discount Amount</label>
+                                        <input asp-for="DiscountAmount" class="form-control" type="number" step="0.01" min="0" placeholder="0.00">
+                                        <span asp-validation-for="DiscountAmount" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Special Requests -->
+                            <div class="mb-4">
+                                <h5 class="font-serif mb-3">Special Requests</h5>
+                                <textarea class="form-control" rows="3" placeholder="Any special requests or preferences (optional)"></textarea>
+                            </div>
+                            
+                            <!-- Terms and Conditions -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a> *
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="d-flex gap-3">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-calendar-check me-2"></i>Submit Reservation
+                                </button>
+                                <a href="@Url.Action("Index", "Rooms")" class="btn btn-outline-secondary btn-lg">
+                                    <i class="bi bi-arrow-left me-2"></i>Back to Rooms
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                @if (ViewBag.SelectedRoom != null)
+                {
+                    var room = (ClientHotelSystem.Models.Room)ViewBag.SelectedRoom;
+                    <div class="card mb-4 sticky-top" style="top: 100px;">
+                        <div class="card-body">
+                            <h5 class="font-serif mb-3">Selected Room</h5>
+                            
+                            <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop" 
+                                 alt="Room" class="img-fluid rounded mb-3">
+                            
+                            <h6 class="font-serif">@room.RoomTypeName</h6>
+                            <p class="text-muted mb-2">Room @room.RoomNumber</p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Price per night:</span>
+                                <strong>@room.PricePerNight?.ToString("C")</strong>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Capacity:</span>
+                                <span>@room.Capacity guests</span>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="small text-muted">
+                                <p class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free WiFi</p>
+                                <p class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free Cancellation</p>
+                                <p class="mb-0"><i class="bi bi-check-circle text-success me-2"></i>24/7 Room Service</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+                <!-- Booking Help -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="font-serif mb-3">Need Help?</h5>
+                        <p class="small text-muted mb-3">Our customer service team is available 24/7 to assist you with your booking.</p>
+                        
+                        <div class="d-grid gap-2">
+                            <a href="tel:+15551234567" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-telephone me-2"></i>Call Us
+                            </a>
+                            <a href="@Url.Action("Contact", "Home")" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-envelope me-2"></i>Contact Form
+                            </a>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="small text-muted">
+                            <p class="mb-1"><strong>Check-in:</strong> 3:00 PM</p>
+                            <p class="mb-1"><strong>Check-out:</strong> 11:00 AM</p>
+                            <p class="mb-0"><strong>Cancellation:</strong> Free up to 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+    <script>
+        // Auto-calculate total amount based on dates and room selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkInInput = document.querySelector('input[name="CheckInDate"]');
+            const checkOutInput = document.querySelector('input[name="CheckOutDate"]');
+            const totalAmountInput = document.querySelector('input[name="TotalAmount"]');
+            const roomSelect = document.querySelector('select[name="RoomId"]');
+            
+            function calculateTotal() {
+                const checkIn = new Date(checkInInput.value);
+                const checkOut = new Date(checkOutInput.value);
+                const roomOption = roomSelect.options[roomSelect.selectedIndex];
+                
+                if (checkIn && checkOut && checkOut > checkIn && roomOption.value) {
+                    const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                    const priceText = roomOption.text;
+                    const priceMatch = priceText.match(/\$(\d+(?:\.\d{2})?)/);
+                    
+                    if (priceMatch) {
+                        const pricePerNight = parseFloat(priceMatch[1]);
+                        const total = nights * pricePerNight;
+                        totalAmountInput.value = total.toFixed(2);
+                    }
+                }
+            }
+            
+            checkInInput.addEventListener('change', calculateTotal);
+            checkOutInput.addEventListener('change', calculateTotal);
+            roomSelect.addEventListener('change', calculateTotal);
+            
+            // Set minimum checkout date when checkin changes
+            checkInInput.addEventListener('change', function() {
+                const checkInDate = new Date(this.value);
+                checkInDate.setDate(checkInDate.getDate() + 1);
+                checkOutInput.min = checkInDate.toISOString().split('T')[0];
+            });
+        });
+    </script>
+}

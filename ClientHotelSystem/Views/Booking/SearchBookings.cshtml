@@ -1,0 +1,99 @@
+@{
+    ViewData["Title"] = "Find My Bookings";
+}
+
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Find My Bookings</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="breadcrumb-item active">My Bookings</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Search Form -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-search" style="font-size: 3rem; color: var(--accent-color);"></i>
+                            <h3 class="font-serif mt-3">Find Your Reservations</h3>
+                            <p class="text-muted">Enter your email address to view all your bookings</p>
+                        </div>
+                        
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                @TempData["Error"]
+                            </div>
+                        }
+                        
+                        <form asp-action="MyBookings" method="get">
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" 
+                                       required placeholder="Enter your email address">
+                                <div class="form-text">We'll search for all bookings associated with this email address</div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-search me-2"></i>Search My Bookings
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <hr class="my-4">
+                        
+                        <div class="text-center">
+                            <h6 class="font-serif mb-3">Need Help?</h6>
+                            <p class="small text-muted mb-3">Can't find your booking or need assistance?</p>
+                            
+                            <div class="d-flex gap-2 justify-content-center flex-wrap">
+                                <a href="tel:+15551234567" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-telephone me-1"></i>Call Us
+                                </a>
+                                <a href="@Url.Action("Contact", "Home")" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-envelope me-1"></i>Contact Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="bi bi-calendar-plus" style="font-size: 2rem; color: var(--accent-color);"></i>
+                                <h6 class="mt-2">New Booking</h6>
+                                <p class="small text-muted mb-3">Make a new reservation</p>
+                                <a href="@Url.Action("Index", "Rooms")" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="bi bi-person-plus" style="font-size: 2rem; color: var(--accent-color);"></i>
+                                <h6 class="mt-2">New Customer</h6>
+                                <p class="small text-muted mb-3">Register for faster booking</p>
+                                <a href="@Url.Action("Register", "Customer")" class="btn btn-outline-primary btn-sm">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

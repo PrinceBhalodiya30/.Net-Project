@@ -1,0 +1,270 @@
+@model ClientHotelSystem.Models.Room
+@{
+    ViewData["Title"] = $"{Model.RoomTypeName} - Room {Model.RoomNumber}";
+}
+
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">@Model.RoomTypeName</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Rooms")">Rooms</a></li>
+                <li class="breadcrumb-item active">@Model.RoomTypeName</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Room Details -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <!-- Room Gallery -->
+                <div class="room-gallery mb-4">
+                    <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop" 
+                         alt="@Model.RoomTypeName" class="img-fluid">
+                </div>
+                
+                <!-- Room Info -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="font-serif mb-3">@Model.RoomTypeName</h2>
+                                <p class="lead text-muted mb-3">Room @Model.RoomNumber</p>
+                                
+                                <div class="room-features mb-4">
+                                    <div class="feature-item">
+                                        <i class="bi bi-people"></i>
+                                        <span>Accommodates up to @Model.Capacity guests</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="bi bi-rulers"></i>
+                                        <span>Spacious 450 sq ft</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="bi bi-eye"></i>
+                                        <span>City view</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="bi bi-check-circle"></i>
+                                        <span>Available now</span>
+                                    </div>
+                                </div>
+                                
+                                <p>Experience luxury and comfort in our beautifully appointed @Model.RoomTypeName. Each room is thoughtfully designed with modern amenities and elegant furnishings to ensure your stay is both comfortable and memorable.</p>
+                                
+                                <p>Whether you're here for business or leisure, our room provides the perfect sanctuary with all the amenities you need for a relaxing stay.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-4 bg-light rounded">
+                                    <div class="h2 text-primary mb-2">@Model.PricePerNight?.ToString("C")</div>
+                                    <div class="text-muted mb-3">per night</div>
+                                    <a href="@Url.Action("Create", "Booking", new { roomId = Model.RoomId })" 
+                                       class="btn btn-primary btn-lg w-100">
+                                        <i class="bi bi-calendar-check me-2"></i>Book This Room
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Room Amenities -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="font-serif mb-4">Room Amenities</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-wifi"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Free High-Speed WiFi</strong>
+                                        <p class="text-muted mb-0">Complimentary wireless internet access</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-tv"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Smart TV</strong>
+                                        <p class="text-muted mb-0">55" LED TV with streaming services</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-snow"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Climate Control</strong>
+                                        <p class="text-muted mb-0">Individual temperature control</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-cup-hot"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Coffee & Tea</strong>
+                                        <p class="text-muted mb-0">In-room coffee and tea making facilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-safe"></i>
+                                    </div>
+                                    <div>
+                                        <strong>In-Room Safe</strong>
+                                        <p class="text-muted mb-0">Electronic safe for valuables</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-telephone"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Direct Dial Phone</strong>
+                                        <p class="text-muted mb-0">Local and international calling</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-droplet"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Premium Bathroom</strong>
+                                        <p class="text-muted mb-0">Marble bathroom with luxury amenities</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="amenity-item">
+                                    <div class="amenity-icon">
+                                        <i class="bi bi-house-door"></i>
+                                    </div>
+                                    <div>
+                                        <strong>24/7 Room Service</strong>
+                                        <p class="text-muted mb-0">Round-the-clock dining service</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Booking Card -->
+                <div class="card mb-4 sticky-top" style="top: 100px;">
+                    <div class="card-body">
+                        <h5 class="font-serif mb-3">Quick Booking</h5>
+                        <div class="text-center mb-3">
+                            <div class="h3 text-primary">@Model.PricePerNight?.ToString("C")</div>
+                            <div class="text-muted">per night</div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mb-3">
+                            <a href="@Url.Action("Create", "Booking", new { roomId = Model.RoomId })" 
+                               class="btn btn-primary btn-lg">
+                                <i class="bi bi-calendar-check me-2"></i>Book Now
+                            </a>
+                            <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-2"></i>Back to Rooms
+                            </a>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="small text-muted">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Room Number:</span>
+                                <span>@Model.RoomNumber</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Capacity:</span>
+                                <span>@Model.Capacity guests</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Status:</span>
+                                <span class="text-success">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel Services -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="font-serif mb-3">Hotel Services</h5>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="bi bi-car-front"></i>
+                            </div>
+                            <div>
+                                <strong>Airport Transfer</strong>
+                                <p class="text-muted mb-0">Complimentary pickup service</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="bi bi-cup-hot"></i>
+                            </div>
+                            <div>
+                                <strong>Restaurant</strong>
+                                <p class="text-muted mb-0">Fine dining and casual options</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="bi bi-water"></i>
+                            </div>
+                            <div>
+                                <strong>Spa & Wellness</strong>
+                                <p class="text-muted mb-0">Full-service spa and fitness center</p>
+                            </div>
+                        </div>
+                        
+                        <div class="amenity-item">
+                            <div class="amenity-icon">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <div>
+                                <strong>Concierge</strong>
+                                <p class="text-muted mb-0">24/7 guest assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Error Messages -->
+@if (TempData["Error"] != null)
+{
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+}
